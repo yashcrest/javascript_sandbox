@@ -1,0 +1,30 @@
+body {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+
+#checkbox:checked + #inputField{
+    background: grey;
+    text-decoration: line-through;
+}
+
+#inputField {
+    font-size: medium;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 5px;
+}
+#checkbox {
+    vertical-align: middle;
+}
+
+#add_btn {
+    padding: auto;
+    margin: 10px;
+    font-weight: bold;
+    color:white;
+    background-color:rgb(110, 164, 34);
+
+}
