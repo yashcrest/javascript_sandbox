@@ -1,9 +1,4 @@
-const items = ['array' , 'damn this things' , 'what the hell?']
-
-//console.log(Array.isArray(items)); // checks if the item is array or not.
-
-
-const todos = [
+const todo = [
     {
         id: 1,
         text: 'take out bin',
@@ -21,11 +16,26 @@ const todos = [
     }
 ];
 
+//map loop
+
+
+//filter loop
+const thisisfilter = todo.filter(item => {
+    return item.id === 3;
+});
+console.log(thisisfilter);
+
+
+
+
 //console.log(todos[0].text); //this will print text inside the first element in array
 
-const todoJSON = JSON.stringify(todos);
+const todoJSON = JSON.stringify(todo);
 
-//looping for loop
-todos.forEach(function(todos){
-    console.log(todos.text);
-});
+//foreach loop
+
+todo.forEach(item => {
+
+    localStorage.setItem(`Todo ${item.id}`,item.text);
+})
+
