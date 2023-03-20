@@ -16,26 +16,34 @@ const todo = [
     }
 ];
 
-//map loop
+//convert todo string
+// const todoJSON = JSON.stringify(todo);
+// console.log(todoJSON);
+
+//for of loop
+// for (i of todo){
+//     console.log(i.text)
+// } 
 
 
-//filter loop
-const thisisfilter = todo.filter(item => {
-    return item.id === 3;
-});
-console.log(thisisfilter);
+//function
+// function addNums(a=1 , b=2){
+//     return a + b
+// }
+
+const addNums = ((a=1, b=2) => a + b);
+console.log(addNums(1,7));
 
 
+//Constructor Function 
+function Address(streetNumber, streetName, suburb, postCode, state){
+    this.streetNumber = streetNumber
+    this.streetName = streetName
+    this.suburb = suburb
+    this.postCode = postCode
+    this.state = state
+}
 
-
-//console.log(todos[0].text); //this will print text inside the first element in array
-
-const todoJSON = JSON.stringify(todo);
-
-//foreach loop
-
-todo.forEach(item => {
-
-    localStorage.setItem(`Todo ${item.id}`,item.text);
-})
-
+//Instantiate Object
+const Address1 = new Address (548 , 'Anzac Highway', 'Glenelg East', '5045', 'SA');
+console.log(Address1); 

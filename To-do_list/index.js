@@ -26,7 +26,7 @@ function addItem(){
      setItems(items); //this will save the new item to the local storage
      refreshList();
 }
-
+ 
 //for updating items to save the reminders
 function updateItem (item, key, value){
     item[key] = value; // I DIDN'T understand this line.
