@@ -31,19 +31,24 @@ const todo = [
 //     return a + b
 // }
 
-const addNums = ((a=1, b=2) => a + b);
-console.log(addNums(1,7));
+// const addNums = ((a=1, b=2) => a + b);
+// console.log(addNums(1,7));
 
 
 //Constructor Function 
-function Address(streetNumber, streetName, suburb, postCode, state){
+function Address(streetNumber, streetName, suburb, postCode, state, DOB){
     this.streetNumber = streetNumber
     this.streetName = streetName
     this.suburb = suburb
     this.postCode = postCode
     this.state = state
+    this.DOB = new Date (DOB);
+    this.fullAddress = function() {
+        return `${this.streetNumber} ${this.streetName} ${this.suburb} ${this.suburb} ${this.postCode} ${this.state}`
+    }
 }
 
 //Instantiate Object
-const Address1 = new Address (548 , 'Anzac Highway', 'Glenelg East', '5045', 'SA');
-console.log(Address1); 
+const Address1 = new Address (548 , 'Anzac Highway', 'Glenelg East', '5045', 'SA', '4-3-1998');
+// console.log(Address1); 
+console.log(Address1.fullAddress());
