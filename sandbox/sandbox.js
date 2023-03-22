@@ -48,9 +48,13 @@ function Address(streetNumber, streetName, suburb, postCode, state, DOB){
     }
 }
 
-Person 
-// Instantiate Object
-const Address1 = new Address  (548 , 'Anzac Highway', 'Glenelg East', '5045', 'SA', '4-3-1998');
+Address.prototype.getFullAddress = function() {
+    
+}
 
+//Instantiate Object
+const Address1 = new Address (548 , 'Anzac Highway', 'Glenelg East', '5045', 'SA', '4-3-1998');
+// console.log(Address1); 
 console.log(Address1.getFullAddress());
-console.log(Address1);
+
+
