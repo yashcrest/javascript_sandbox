@@ -70,7 +70,7 @@ const ages = [33,22,11,42,4245,1541,23523];
 //         return true;
 //     }
 // })
-// console.log(result);
+// console.log(result);f
 
 //we can even further simplfy the above filter method by entering it like this
 // const result1 = ages.filter(age => age >=21);

@@ -43,12 +43,14 @@ function Address(streetNumber, streetName, suburb, postCode, state, DOB){
     this.postCode = postCode
     this.state = state
     this.DOB = new Date (DOB);
-    this.fullAddress = function() {
+    this.getFullAddress = function() {
         return `${this.streetNumber} ${this.streetName} ${this.suburb} ${this.suburb} ${this.postCode} ${this.state}`
     }
 }
 
-//Instantiate Object
-const Address1 = new Address (548 , 'Anzac Highway', 'Glenelg East', '5045', 'SA', '4-3-1998');
-// console.log(Address1); 
-console.log(Address1.fullAddress());
+Person 
+// Instantiate Object
+const Address1 = new Address  (548 , 'Anzac Highway', 'Glenelg East', '5045', 'SA', '4-3-1998');
+
+console.log(Address1.getFullAddress());
+console.log(Address1);
