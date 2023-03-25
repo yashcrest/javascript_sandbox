@@ -2,4 +2,6 @@
 
 
 //multiple element
-console.log(document.querySelector('html'));
+const ul = document.querySelector('users')
+
+ul.firstElementChild
