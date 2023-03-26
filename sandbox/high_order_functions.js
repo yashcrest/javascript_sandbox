@@ -15,6 +15,14 @@ const ages = [33,22,11,42,4245,1541,23523];
 //  const totalyears = companies.reduce((total, company) => total + (company.end- company.start), 0);
 // console.log(totalyears)
 
+//foreach
+// const names = companies.forEach(company => company.name);
+// console.log(names);
+
+//map 
+// const names1 = companies.map(person => person.name);
+// console.log(names1);
+
 
 
 //forLoops
