@@ -45,8 +45,8 @@
 
 
 //Traversing the DOM
-let itemList = document.querySelector('#Items');
-let form = document.querySelector('form');
+// let itemList = document.querySelector('#Items');
+// let form = document.querySelector('form');
 //parentNode 
 // console.log(itemList.parentNode);
 // itemList.parentNode.style.backgroundColor = "#f4f4f4";
@@ -74,25 +74,63 @@ let form = document.querySelector('form');
 
 
 //CreateElement
-let newDiv = document.createElement('div');
-newDiv.className ='created-via-JS';
-newDiv.id = 'myDiv'
-console.log(newDiv);
+// let newDiv = document.createElement('div');
+// newDiv.className ='created-via-JS';
+// newDiv.id = 'myDiv'
+// console.log(newDiv);
 
-//creating a text node
-let newDivtext = document.createTextNode('This is created via JS');
-newDiv.appendChild(newDivtext);
+// //creating a text node
+// let newDivtext = document.createTextNode('This is created via JS');
+// newDiv.appendChild(newDivtext);
 
-//adding the element to DOM
-let container = document.querySelector('header .container ');
-let h1 = document.querySelector('header h1');
-container.insertBefore(newDiv, h1);
+// //adding the element to DOM
+// let container = document.querySelector('header .container');
+// let h1 = document.querySelector('header h1');
+// container.insertBefore(newDiv, h1);
 
-newDiv.style.fontSize = '30px';
+// newDiv.style.fontSize = '30px';
 
 //Event Listner
-let btn = document.querySelector('#button');
-btn.addEventListener('click',()=> {
-    document.getElementById('myDiv').textContent = 'changed';
-    document.querySelector('#main').style.backgroundColor = '#f4f4f4';
-});
+// let newDiv = document.createElement('div')
+// let newDivtext = document.createTextNode('New Div');
+// newDiv.appendChild(newDivtext);
+// newDiv.className = 'output';
+// let container  = document.querySelector('#main');
+// let btn = document.querySelector('#button');
+// container.insertBefore(newDiv, btn);
+
+
+// btn.addEventListener('click',(e)=> {
+//     console.log(e); 
+    // console.log(e.target);
+    // console.log
+    // document.getElementById('myDiv').textContent = 'changed';
+    // document.querySelector('#main').style.backgroundColor = '#f4f4f4';
+// });
+
+
+//Mouse events
+var button = document.getElementById('button');
+button.addEventListener('click' , runEvent);
+
+let box = document.getElementById('box');
+box.addEventListener('mousemove', runEvent);
+
+var select = document.querySelector('select');
+// box.addEventListener('mouseout', runEvent);
+function runEvent(e){
+    console.log("Event type: " + e.type);
+
+    // output.innerHTML = '<h3> MouseX : '+ e.offsetX+' </h3><h3>MouseY : '+e.offsetY+'</h3>';
+    // document.body.style.backgroundColor = "rgb("+e.offsetX+","+e.offsetY+",40)"
+    output.innerHTML = '<h3>'+e.target.value+'</h3>'
+
+
+}
+
+let input = document.querySelector('input[type="text"]');
+let form = document.querySelector('form');
+input.addEventListener('keypress', runEvent)
+
+//select button event
+select.addEventListener('change', runEvent)
