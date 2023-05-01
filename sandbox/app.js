@@ -12,7 +12,7 @@ function onSubmit(e){
         msg.classList.add('error');
         msg.innerHTML = "Please enter all fields"
         msg.style.display = 'block';
-        setTimeout(() => msg.remove(), 2000);
+        setTimeout(() => msg.style.display = 'none', 1000);
     }
      else {
         form.style.background = '#ccc';

@@ -48,7 +48,7 @@ function refreshList(){
         descriptionInput.value = item.description;
         checkbox.checked = item.completed;
 
-        descriptionInput.addEventListener('change' , ()=> {
+        descriptionInput.addEventListener('c hange' , ()=> {
               updateItem(item, "description" , descriptionInput.value)
         } )
 
@@ -60,7 +60,5 @@ function refreshList(){
     }
 }
 
-button.addEventListener("click", () => {
-    addItem();
-})
+button.addEventListener("click", addItem)
 refreshList();

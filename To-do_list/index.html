@@ -9,17 +9,13 @@
   <script src="./index.js" defer></script>
 </head>
 <body>
-  <h1 id="Reminders">Reminders:</h1>
-  <div id="container">
-    <input type="radio" id="radio_btn">
-  </div>
-  <template id="template">
+  <div id="items"></div>
+  <template id="itemTemplate">
     <div class="item">
-    <input type="radio" id="radio_btn">
-    <input type="text" id="inputField"
-    placeholder="Remind me..">
+      <input type="checkbox" name="item-completed">
+      <input type="text" placeholder="To-Do item..." id="item-description">
     </div>
   </template>
-  <button id="add_btn">add</button>
+  <button id="add">Add Items</button>
 </body>
 </html> 
