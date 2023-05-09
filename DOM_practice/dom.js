@@ -70,22 +70,6 @@ function filterItems(e){
         })
 }
 
-//clickEvent
-// btn.addEventListener("click", btnclicked);
-// function btnclicked(e){
-//     console.log(e);
-//     var output = document.querySelector('#output');
-//     output.innerHTML = '<h3>'+e.target.id+'</h3>'
-//     console.log(e.pageX, e.clientX);
-// }
-
-// //mouseMove Event
-// box.addEventListener('mousemove',runEvent);
-// function runEvent(e){
-//     console.log(e.type);
-//     output.innerHTML = '<h3>MouseX:'+ e.offsetX+'</h3><h3>MouseY: '+e.offsetY+'</h3>';
-//     box.style.backgroundColor = "rgb("+e.offsetX+","+e.offsetY+",0)";
-// }
 
 
 

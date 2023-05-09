@@ -1,52 +1,78 @@
-const remind_btn = document.querySelector('#remind_btn');
 const inputField = document.querySelector("#inputField");
-const itemList = document.querySelector('#itemList');
-const msg = document.querySelector('#msg');
+const remind_btn = document.querySelector("#remind_btn");
+const itemList = document.querySelector("#itemList");
+const msg = document.querySelector("#msg");
 
 
-remind_btn.addEventListener('click' , addItem)
+//On Refresh, get all the items from localStorage
+window.onload = loadReminders();
 
-function addItem(e){
-    if(inputField.value === ''){
+//OnClick AddReminder Button add task
+remind_btn.addEventListener('click', addReminder);
+
+
+function loadReminders(){
+
+    //Check if local storage has any items, if not then return 
+    if(localStorage.getItem('reminders') === null) return;
+
+    //Get reminders from localStorage and convert it to an arrray
+    let reminders = Array.from(JSON.parse(localStorage.getItem("reminders")));
+
+    reminders.forEach(reminder => {
+        //create a list item, and add innerHTML 
+        const li = document.createElement('li');
+        li.classList = reminder.completed ? ['checked'] : []
+        li.innerHTML =`  <span class ='remind' id="task" onClick="checkReminder(this)"> ${reminder.reminder} </span>
+        <span class="close" onClick="removeReminder(this)">\u00D7 </span>` ;
+        itemList.appendChild(li); 
+    })
+}
+
+function addReminder(){
+
+    //if the reminder field is empty
+    if (inputField.value === ''){
         msg.classList.add('error')
         msg.textContent = "No input received"
         msg.style.display = 'block'
         setTimeout(() => msg.style.display = 'none', 1000);
-    } else {
-        var li = document.createElement('li') 
-        var span = document.createElement('span')
-        // var checkbox = docuemnt.createElement('input');
-        // checkbox.setAttribute('type','checkbox')
-        span.appendChild(document.createTextNode('\u00D7'))
-        span.classList = 'close';
-        li.appendChild(document.createTextNode(inputField.value));
-        li.appendChild(span);
-        // li.appendChild(checkbox);
-        itemList.appendChild(li);
-
-        //Close button to hide hide the list
-        span.onclick = function(){
-            var div = this.parentElement;
-            div.style.display = 'none';
-        }
-
-        //Checked symbol while clicking on every list item
-        li.addEventListener('click', clicked)
-        function clicked(e){
-            e.target.classList.toggle('checked');
-        }
+        return false;
     }
-    inputField.value = '';
+
+    //add task to local storage 
+    localStorage.setItem("reminders", JSON.stringify([...JSON.parse(localStorage.getItem("reminders") || "[]"), {reminder: inputField.value, completed: false}]));
+
+    //create li
+    const li = document.createElement('li');
+    li.innerHTML = `<span class="remind" onClick="checkReminder(this)">${inputField.value}</span>
+    <span class="close" onClick="removeReminder(this)">\u00D7</span>`
+    itemList.appendChild(li)
+    inputField.value = '';    
+
 }
 
-//Check if any data in Local Storage 
-window.onload = getData
-const getData = ()=> {
-    let tasks = localStorage.getItem('reminders');
-    return JSON.parse(tasks);
+
+//onClick for span element
+function checkReminder(e){
+    let reminders = Array.from(JSON.parse(localStorage.getItem('reminders')));
+
+    const updatedItems = reminders.map(item => { 
+        if (item.reminder === (e.parentElement).children[0].innerText) { 
+            return {...item, completed: !item.completed};
+        }
+            else {
+                 return item; 
+                } 
+            }); 
+
+    localStorage.setItem("reminders", JSON.stringify(updatedItems));
+    e.parentElement.classList.toggle('checked');
 }
 
 
-const setData = (data) => {
-    localStorage.setItem();
+function removeReminder(e){
+    let reminders = Array.from(JSON.parse(localStorage.getItem("reminders")));
+    localStorage.setItem("reminders", JSON.stringify(reminders.filter(item => item.reminder != e.parentElement.children[0].innerText)));
+    e.parentElement.remove();
 }
