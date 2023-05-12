@@ -5,6 +5,12 @@ const msg = document.querySelector('#msg');
 
 remind_btn.addEventListener('click', addItems)
 
+inputField.addEventListener('keyup', function(e){
+    if(e.key === 'Enter'){
+        addItems();
+    }
+})
+
 function addItems(e){ 
     var  reminder = inputField.value; 
     if(reminder === ''){
@@ -12,7 +18,8 @@ function addItems(e){
         msg.textContent = "No input received"
         msg.style.display = 'block'
         setTimeout(() => msg.style.display = 'none', 1000);
-    } else {
+        return false;
+    } 
         var li = document.createElement('li') 
         var span = document.createElement('span')
         span.appendChild(document.createTextNode('\u00D7'))
@@ -32,6 +39,5 @@ function addItems(e){
             e.target.classList.toggle('checked');
             
         }
-    }
     inputField.value = '';
 }
