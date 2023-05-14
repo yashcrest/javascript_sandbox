@@ -60,7 +60,14 @@ function addReminder(){
     li.innerHTML = `<span class="remind" onClick="checkReminder(this)">${userInput}</span>
     <span class="close" onClick="removeReminder(this)">\u00D7</span>`
     itemList.appendChild(li)
-    inputField.value = '';   
+    inputField.value = ''; 
+
+
+    //testing right click event in 'li'
+    li.addEventListener('contextmenu' , (e) => {
+        e.preventDefault();
+        console.log(1);
+    });
 
 }
 

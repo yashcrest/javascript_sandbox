@@ -13,10 +13,8 @@
   ul li {
     cursor: pointer;
     position: relative;
-    /* margin: 12px 8px 12px 40px; */
-    /* list-style: none; */
     background: #eee;
-    /* font-size: 18px; */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     transition: 0.2s;
 
     /* make the list items unselectable */
@@ -62,23 +60,23 @@
   }
 
   /* remind class for span */
-  .remind {
+  li span.remind {
     width: 100%;
     height: 100%;
-    display: inline-block;
     margin: 0px 8px 0px 30px;
     padding: 12px 8px 12px 10px;
-    transition: 0.2s;
     font-size: 18px;
     line-height: 100%;
+    display: inline-block;
+    transition: 0.2s;
   }
-  
-  /* Style the close button */
-  .close {
+
+  /* style the close button */
+  li span.close {
     position: absolute;
     right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
+    top:0;
+    padding: 12px 16px;
   }
   
   .close:hover {
@@ -109,6 +107,7 @@
     padding: 10px;
     float: left;
     font-size:16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 /* Style the Reminder Button */
 #remind_btn{
@@ -142,10 +141,17 @@
   text-align: right;
   padding-bottom: 30px;
   font-size: 2px;
-  font-family: Arial, Helvetica, sans-serif
 }
 
 #searchInput {
+  box-sizing: border-box;
   font-size: 18px;
-  
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#searchInput:hover {
+  background-color: #eee;
 }
