@@ -36,6 +36,10 @@ ul li {
   box-sizing: border-box;
 }
 
+ul {
+  margin-top: 0;
+}
+
 /* Set all odd list items to a different color (zebra-stripes) */
 ul li:nth-child(odd) {
   background: #f9f9f9;
@@ -133,12 +137,12 @@ li span.close {
   margin: 5px;
   width: 100%;
   font-weight: bold;
+  margin-bottom: 0px;
 }
 
 .listContent {
   margin-top: 260px;
 }
-
 
 .searchBox{
 box-sizing: border-box;
