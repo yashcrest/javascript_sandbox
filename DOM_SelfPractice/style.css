@@ -24,6 +24,11 @@
   clear: both;
 }  
 
+
+.listContent {
+  margin-top: 260px;
+}
+
 /* Style the list items */
 ul li {
   cursor: pointer;
@@ -140,9 +145,7 @@ li span.close {
   margin-bottom: 0px;
 }
 
-.listContent {
-  margin-top: 260px;
-}
+
 
 .searchBox{
 box-sizing: border-box;
