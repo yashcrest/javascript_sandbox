@@ -5,6 +5,7 @@ const msg = document.querySelector("#msg");
 
 const searchInput = document.querySelector("#searchInput");
 
+
 //On Refresh, get all the items from localStorage
 window.onload = loadReminders();
 

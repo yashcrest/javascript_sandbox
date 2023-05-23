@@ -9,11 +9,10 @@
   background-color: #555;
   width: 100%;
   top: 0;
-  left: 0;
-  padding: 30px 40px;
+  padding: 30px 30px;
   color: white;
   text-align: center;
-  position: fixed;
+  position: sticky; /* it will prevent the div below to not overlay */
   z-index: 999;
   }
 
@@ -23,11 +22,6 @@
   display: table;
   clear: both;
 }  
-
-
-.listContent {
-  margin-top: 260px;
-}
 
 /* Style the list items */
 ul li {
@@ -43,6 +37,7 @@ ul li {
 
 ul {
   margin-top: 0;
+  padding: 0;
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
@@ -165,6 +160,9 @@ font-family: 'Courier New', Courier, monospace;
 background-color: #eee;
 }
 
-#itemList{
+#Temperature {
+  float: left;
+  margin: 0;
   padding: 0;
+  left: 0;
 }
