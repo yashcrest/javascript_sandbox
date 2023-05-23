@@ -62,9 +62,12 @@ function addReminder(){
     itemList.appendChild(li)
     inputField.value = ''; 
 
+    //will make the li in the scrollable view when new li elements are added
+    li.scrollIntoView({behavior:"smooth", block: "end", inline: "nearest"});
+
 
     //testing right click event in 'li'
-    li.addEventListener('contextmenu' , (e) => {
+    li.addEventListener('dblclick' , (e) => {
         e.preventDefault();
         console.log(1);
     });
