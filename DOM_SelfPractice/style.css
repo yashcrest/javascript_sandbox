@@ -11,9 +11,14 @@
   top: 0;
   padding: 30px 30px;
   color: white;
-  text-align: center;
   position: sticky; /* it will prevent the div below to not overlay */
-  z-index: 999;
+  z-index: 999
+  }
+
+  .header h1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 
 /* Clear floats after the header */
@@ -161,11 +166,10 @@ background-color: #eee;
 }
 
 #Temperature {
-  float: left;
   margin: 0;
   padding: 0;
-  left: 0;
   border:  red solid;
   box-sizing: border-box;
   height: max-content;
+  width: 200px;
 }
