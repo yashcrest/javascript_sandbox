@@ -1,4 +1,32 @@
-fetch('https://api.weatherapi.com/v1/current.json?q=kathmandu&lang=eu&key=34d6d8dc8a584ef6b4d92016232105')
-.then(response => response.json())
-.then(data => document.body.innerHTML = JSON.stringify(data));
+// Mimicing blog post on a server
+const posts = [
+    {
+        title: 'Post 1',
+        body: 'This is post one'
+    },
+    {
+        title: 'Post 2',
+        body: 'This is post two'
+    }
+];
+
+function getPosts(){
+    setTimeout(() => {
+        let output = ''
+        posts.forEach((post,index) => {
+            output += `<li>${post.body}</li>`
+        })
+        document.body.innerHTML = output
+    },500);
+}
+
+function createPost(post, callback) {
+    setTimeout(() => {
+        posts.push(post);
+        callback();
+    }, 1000);
+}
+
+createPost({title:'Post 3', body:'This is post three'}, getPosts);
+
 
