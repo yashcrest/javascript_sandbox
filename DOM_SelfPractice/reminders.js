@@ -17,7 +17,6 @@ inputField.addEventListener('keyup', (e) => {
     }
 })
 
-
 //loading reminder from localStorage
 function loadReminders(){
     //Check if local storage has any items, if not then return 
