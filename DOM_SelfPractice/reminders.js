@@ -119,3 +119,11 @@ function searchItem(e){
         }
     })
 } 
+
+
+//Weather API
+//  const API_key = 34d6d8dc8a584ef6b4d92016232105
+// Sample Request URL = http://api.weatherapi.com/v1/current.json?key=34d6d8dc8a584ef6b4d92016232105&q=Adelaide&aqi=no
+fetch('http://api.weatherapi.com/v1/current.json?key=34d6d8dc8a584ef6b4d92016232105&q=kathmandu&aqi=no')
+.then(res => res.json())
+.then(data => console.log(data));
