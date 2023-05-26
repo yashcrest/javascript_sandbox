@@ -123,10 +123,14 @@ makeRequest('Google').then(response => {
 
 //Now using Async/Await
 async function doWork(){
-   const response =  await makeRequest('Google')
-   console.log('response received')
-   const processedResponse = await processRequest(response)
-   console.log(processedResponse);
+    try {const response =  await makeRequest('Facebook')
+    console.log('response received')
+    const processedResponse = await processRequest(response)
+    console.log(processedResponse);
+    } catch(error) {
+        console.log(error);
+    }
+   
 }
 
 doWork();
