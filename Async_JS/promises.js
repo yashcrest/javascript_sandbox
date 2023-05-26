@@ -111,10 +111,22 @@ function processRequest(response){
     })
 }
 
-makeRequest('Google').then(response => {
-    return processRequest(response)
-}).then(processedResponse => {
-    console.log(processedResponse)
-}).catch(err => {
-    console.log(err)
-})
+// makeRequest('Google').then(response => {
+//     console.log('Response received')
+//     return processRequest(response)
+// }).then(processedResponse => {
+//     console.log(processedResponse)
+// }).catch(err => {
+//     console.log(err)
+// })
+
+
+//Now using Async/Await
+async function doWork(){
+   const response =  await makeRequest('Google')
+   console.log('response received')
+   const processedResponse = await processRequest(response)
+   console.log(processedResponse);
+}
+
+doWork();
