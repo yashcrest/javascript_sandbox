@@ -2,9 +2,9 @@ const inputField = document.querySelector("#inputField");
 const remind_btn = document.querySelector("#remind_btn");
 const itemList = document.querySelector("#itemList");
 const msg = document.querySelector("#msg");
-
 const searchInput = document.querySelector("#searchInput");
 
+const weatherData = document.querySelector("#weatherData");
 
 //On Refresh, get all the items from localStorage
 window.onload = loadReminders();
@@ -120,10 +120,3 @@ function searchItem(e){
     })
 } 
 
-
-//Weather API
-//  const API_key = 34d6d8dc8a584ef6b4d92016232105
-// Sample Request URL = http://api.weatherapi.com/v1/current.json?key=34d6d8dc8a584ef6b4d92016232105&q=Adelaide&aqi=no
-fetch('http://api.weatherapi.com/v1/current.json?key=34d6d8dc8a584ef6b4d92016232105&q=kathmandu&aqi=no')
-.then(res => res.json())
-.then(data => console.log(data));
