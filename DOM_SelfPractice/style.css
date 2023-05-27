@@ -164,12 +164,3 @@ font-family: 'Courier New', Courier, monospace;
 #searchInput:hover {
 background-color: #eee;
 }
-
-#Temperature {
-  margin: 0;
-  padding: 0;
-  border:  red solid;
-  box-sizing: border-box;
-  height: max-content;
-  width: 200px;
-}
