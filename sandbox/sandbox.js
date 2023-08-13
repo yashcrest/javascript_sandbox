@@ -67,3 +67,62 @@
 // const Address1 = new Address  (548 , 'Anzac Highway', 'Glenelg East', '5045', 'SA', '4-3-1998');
 // console.log(Address1)
 // console.log(Address1.getFullAddress());
+
+
+//.reduce() 
+// arr1 = [
+//     {"id": 1, "x": 1},
+//     {"id": 2, "x": 9}
+// ]
+// arr2 = [
+//     {"id": 3, "x": 5},
+//     {'id' : 1, 'x' : 4}
+// ]
+// i=0 ; j= 0
+// let newArr = []
+// while(i < arr1.length && j < arr2.length) {
+//     if(arr2.includes(arr1[i].id)) {
+//         newArr.push(arr1[i++]);
+//     }
+// }
+// console.log(newArr);
+
+
+
+// let array1 = [{"id":1,"b":{"b": 94},"v":[4,3],"y":48}]
+// let array2 = [{"id":1,"b":{"c": 84},"v":[1,3]}]
+// result = {};
+// for (let i = 0; i < array1.length; i++) {
+//     result[i] = array1[i]
+// }
+// console.log(result);
+
+
+const westeros = {
+    cerci : {
+        height: "5'10",
+        weight: "70 kg",
+        canCook : function() {
+            console.log('cooking...');
+        } 
+    },
+    jamie : {
+        height : "6'3",
+        weight: "70 kg",
+        canCook : function() {
+            console.log('cooking...');
+        }
+    }   
+}
+
+let keys = Object.keys(westeros)
+// console.log(keys);
+let values = Object.values(westeros);
+
+values.reduce((acc, value) => {
+    acc.set(value.height, value)
+    return acc
+} , new Map());
+// console.log(Object.entries(westeros))
+
+
